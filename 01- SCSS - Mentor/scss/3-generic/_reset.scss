@@ -1,0 +1,27 @@
+
+
+/* 
+La capa Generic (Genérico) es la primera capa que escribe código CSS real y visible. Su trabajo es "resetear" o "normalizar" el terreno de juego.
+Lo que encontrarás allí es:
+Resets (Reinicios): Eliminar los márgenes y paddings extraños que traen los navegadores por defecto (ese borde blanco feo alrededor de la página).
+Box-Sizing: La regla sagrada (* { box-sizing: border-box; }) para que el padding no aumente el tamaño de tus cajas.
+Estilos Base: Definir la fuente, el color de texto y el alto de línea para todo el body.
+Regla de oro: Aquí se usan selectores de Etiqueta (body, h1, p, a, *).
+*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+  color-scheme: Dark Light;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--theme-bg-page);
+  color: var(--theme-text-main);
+}

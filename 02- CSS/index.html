@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda Tech</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="o-container">
+        <header class="c-header">
+            <h1 style="text-align: center; margin-bottom: 20px;">Mi Tienda</h1>
+        </header>
+
+        <div class="c-filter">
+            <button class="c-filter__btn c-filter__btn--active" data-category="all">Todos</button>
+            <button class="c-filter__btn" data-category="jewelery">Joyería</button>
+            <button class="c-filter__btn" data-category="men's clothing">Ropa Hombre</button>
+        </div>
+        
+        <div id="product-grid" class="o-grid"></div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+/* 
+La capa Components (Componentes) es la Personalidad y la Piel de tu sitio web. Aquí es donde construyes las piezas visuales, reconocibles y reutilizables de la interfaz (UI).
+Lo que encontrarás allí es:
+Piezas de UI: Botones (.c-btn), Tarjetas (.c-card), Barras de navegación (.c-navbar), Inputs (.c-input).
+Estética: Aquí sí defines colores, bordes, sombras, tipografía y fondos.
+Funcionalidad visual: Estados como :hover o clases activas (--active).
+Regla de oro:
+Llevan el prefijo c- (ej: .c-card).
+No deben tener márgenes externos (margin) que los empujen, eso es trabajo del Layout (Objects).
+*/
+
+
+@use "../1-settings/colors" as c;
+
+
+.c-card {
+  --bg: var(--theme-bg-elevated);
+  --border-color: transparent;
+  --text-color: var(--theme-text-main);
+
+  background: var(--bg);
+  border: 2px solid var(--border-color); // Aca le estamos danto color a los Borders pero con una variable CSS
+  padding: 15px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  // color: c.$color-accent; Aca usamos variable de SCSS para cambiar los colores de la letra en las Card
+
+  &__image {
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  // Ejercicio, Agregamos estilos a la carta para que el nombre no sobrepase la carta
+
+  &__title {
+    font-size: 1rem;
+    // color: var(--theme-secondary);
+    /* Obliga a que el texto sea una sola línea */
+    white-space: nowrap;
+    /* Oculta lo que se salga del contenedor */
+    overflow: hidden;
+    /* Pone los "..." automáticamente al final */
+    text-overflow: ellipsis;
+    /* Asegúrate de que tenga un ancho máximo o el ancho del padre */
+    max-width: 100%;
+  }
+
+  &__btn {
+    background: var(--theme-bg-primary);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+
+    &--buy:hover {
+      background: var(--theme-background-btn);
+    }
+  }
+
+  // Ejercicio, creamos estos estilos que seran agregados unicamente a los productos que tengan la categoria joyas
+
+  /* Usamos '&' para pegar '--featured' a '.c-card' */
+  &--featured {
+    background: var(--bg);
+    --border-color: gold;
+    --text-color: #323232;
+    /*una sombra dorada para resaltar más */
+    box-shadow: 0 4px 5px rgb(0 0 0 / 30%);
+}
+
+}

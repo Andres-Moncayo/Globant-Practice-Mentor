@@ -1,0 +1,22 @@
+/* main.scss */
+
+// 1. Settings
+@use "1-settings/colors";
+
+
+// 3. Generic
+@use "3-generic/reset";
+@use "3-generic/theming";
+
+// 5. Objects
+@use "5-objects/grid";
+
+// 6. Components
+@use "6-components/header";
+@use "6-components/filters";
+@use "6-components/card";
+
+
+
+// 7. Trumps
+@use "7-trumps/utilities";

@@ -1,0 +1,119 @@
+/* style.css */
+
+
+/* 1. RESET BÁSICO */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #000000;
+    color: white;
+}
+
+/* 2. OBJETOS (Layout) */
+.o-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.o-grid {
+    display: grid;
+    /* Esto asegura que las columnas midan mínimo 250px y se ajusten */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+    gap: 20px;
+    width: 100%;
+}
+
+/* 3. COMPONENTES */
+
+/* --- Filtros --- */
+.c-filter {
+    background-color: #000000;
+    padding: 15px;
+    display: flex; /* Para poner los botones uno al lado del otro */
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.c-filter__btn {
+    border-radius: 100px;
+    padding: 10px 20px; /* Mejor usar padding que width fijo */
+    cursor: pointer;
+    background-color: #333; /* Un gris base */
+    color: white;
+    border: 1px solid #444;
+}
+
+/* Modificador Activo (Debe ir debajo del botón normal) */
+.c-filter__btn--active {
+    background-color: #3498db;
+    border-color: #3498db;
+    font-weight: bold;
+}
+
+/* --- Tarjeta (Card) --- */
+.c-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    color: #2c3e50; /* Texto oscuro para el fondo blanco */
+    height: 100%; /* Para que todas las tarjetas de la fila midan lo mismo */
+}
+
+/* Modificador Featured (Joyería) */
+/* IMPORTANTE: Esto debe ir separado en CSS puro */
+.c-card--featured {
+    border: 3px solid gold;
+    background-color: #fffdf0;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.c-card__image {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.c-card__body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Empuja el contenido para llenar el espacio */
+}
+
+.c-card__title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.c-card__price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.c-card__btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: auto; /* Truco para enviar el botón siempre al fondo */
+    width: 100%;
+}
+
+.c-card__btn:hover {
+    background: #2c3e50;
+}
+

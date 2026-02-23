@@ -1,0 +1,26 @@
+/*
+La capa Objects (Objetos) es el Esqueleto Invisible de tu sitio web.(cómo se acomodan las cosas), pero sin diseño visual.
+Lo que encontrarás allí es:
+Contenedores: El famoso .o-container que centra el contenido en la pantalla.
+Grillas (Grids): El sistema de columnas y filas (.o-grid, .o-row, .o-col) que organiza los elementos.
+Media Objects: Patrones de "imagen a la izquierda, texto a la derecha" (como un comentario de Facebook o un tweet).
+Regla de oro: Aquí NUNCA usas cosmética.
+SÍ: display, width, margin, padding, flex, grid.
+*/
+
+
+.c-header {
+  background-color: var(--theme-bg-elevated);
+  color: var(--theme-text-main);
+}
+.o-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.o-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}

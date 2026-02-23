@@ -1,0 +1,36 @@
+@use "../1-settings/colors" as *;
+
+// 1. Definición base (Default / Light)
+:root {
+  --theme-bg-primary: #{$color-primary};
+  --theme-bg-page: #f5f5f5; // Pagina
+  --theme-bg-elevated: #ffffff; // Cartas
+  --theme-text-main: #111111; // Texto 
+  --theme-background-btn:red;
+}
+
+// 2.  Auto (Dark Mode automático)
+@media (prefers-color-scheme: Dark) {
+  :root {
+    --theme-bg-page: #020617;
+    --theme-bg-elevated: #0f172a;
+    --theme-text-main: #ffffff;
+    --theme-background-btn:red;
+  }
+}
+
+
+// Aquí usamos la especificidad de atributos para forzar el tema
+html[data-theme='Light'] {
+  --theme-bg-page: #f5f5f5;
+  --theme-bg-elevated: #fdfdfd;
+  --theme-text-main: #000000;
+  --theme-background-btn:rgb(0, 255, 47);
+}
+
+html[data-theme='Dark'] {
+  --theme-bg-page: #020617;
+  --theme-bg-elevated: #0f172a;
+  --theme-text-main: #e5e7eb;
+  --theme-background-btn:red;
+}
