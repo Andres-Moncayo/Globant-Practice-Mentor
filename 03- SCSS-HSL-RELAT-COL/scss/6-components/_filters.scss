@@ -1,0 +1,42 @@
+
+
+
+
+.c-filter{
+  --filter-bg: var(--theme-positive);
+  
+    background-color: var(--filter-bg);
+    padding: 15px;
+
+
+    &__btn{
+        border-radius: 1px;
+        width: 120px;
+        cursor: pointer;
+    }
+
+
+    &__btn--active{
+        border-radius: 1px;
+        width: 120px;
+        cursor: pointer;
+        background-color: var(--theme-bg-primary)
+    }
+};
+
+button {
+  padding: var(--btn-padding);
+  border: none;
+  border-radius: var(--btn-radius);
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  cursor: pointer;
+  transition: var(--btn-transition);
+  box-shadow: var(--btn-shadow);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--btn-shadow-hover);
+}
+

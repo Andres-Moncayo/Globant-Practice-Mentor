@@ -1,6 +1,0 @@
-
-En la carpeta settings se guardan únicamente las Variables Globales y la Configuración del proyecto. Es el "ADN" de tu diseño. Lo que encontrarás allí es:
-Colores: Base
-Tipografía: Fuentes y tamaños de letra.
-Espaciados: Margenes y paddings.
-Breakpoints: Los anchos de pantalla pc, movil.

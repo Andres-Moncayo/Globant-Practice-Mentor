@@ -1,0 +1,135 @@
+OBJETIVO, Renderizar tarjetas de productos manteniendo la especificidad baja y usando la arquitectura ITCSS.
+
+
+PASO 1: La Arquitectura (Preparar el terreno) ITCSS, Arquitectura CSS del Triángulo Invertido
+
+proyecto/
+├── index.html
+├── js/
+│   └── app.js
+└── scss/
+    ├── 1-settings/
+    │   └── _colors.scss
+    ├── 3-generic/
+    │   └── _reset.scss
+    ├── 5-objects/
+    │   └── _grid.scss
+    ├── 6-components/
+    │   └── _card.scss
+    │   └── _header.scss
+    ├── 7-trumps/
+    │   └── _utilities.scss
+    └── main.scss  <-- (Este es el archivo maestro)
+
+----------------------------------------------------------------------------------------------------
+
+PASO 2: Se ingresan los estilos que tenemos para cada apartado, ejemplo:
+
+1. scss/1-settings/_colors.scss
+$color-primary: #3498db;
+$color-secondary: #2c3e50;
+$color-accent: #e74c3c;
+$white: #ffffff;
+
+
+
+2. scss/3-generic/_reset.scss
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+
+3. scss/5-objects/_grid.scss
+.o-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.o-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+
+
+4. scss/6-components/_card.scss (Usando variables de la capa 1)
+.c-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    
+    &__image {
+        height: 150px;
+        object-fit: contain;
+    }
+
+    &__title {
+        font-size: 1rem;
+        color: $color-secondary;
+    }
+
+    &__btn {
+        background: $color-primary;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        
+        &--buy:hover {
+            background: $color-secondary;
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------
+
+PASO 3: El Archivo maestro main.css
+
+/* main.scss */
+
+// 1. Settings
+@import "1-settings/colors";
+
+// 3. Generic
+@import "3-generic/reset";
+
+// 5. Objects
+@import "5-objects/grid";
+
+// 6. Components
+@import "6-components/header";
+@import "6-components/card";
+
+// 7. Trumps
+@import "7-trumps/utilities";
+
+
+----------------------------------------------------------------------------------------------------
+
+
+PASO 4:
+
+Sublime Text o VS Code no pueden leer archivos .scss directamente en el navegador. Necesitas "compilarlo". Tienes dos opciones fáciles:
+
+Extensión: Si usas VS Code, instala "Live Sass Compiler". Al darle al botón "Watch Sass", él creará automáticamente un archivo main.css que es el que pondrás en tu HTML.
+
+o Con la configuracion del Mentor
+Ejecucion: npm run sass-watch
+
+
+
+
+CONFIGURACION COMPILADOR:
+
+En carpeta raiz del proyecto
+npm init -y
+npm install sass --save-dev

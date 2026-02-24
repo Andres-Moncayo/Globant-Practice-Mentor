@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="o-container">
+        <header>
+            <h1>Mi Tienda</h1>
+            <button id="theme-toggle" class="c-filter__btn c-theme-toggle"> 
+                Tema: Auto
+            </button>
+        </header>
+    
+        <div class="c-filter">
+            <button class="c-filter__btn c-filter__btn--active" data-category="all">Todos</button>
+            <button class="c-filter__btn" data-category="jewelery">Joyeria</button>
+            <button class="c-filter__btn" data-category="men's clothing">Men's Clothing</button>
+        </div>
+
+
+        <div id="contenedorRopa" class="o-grid"></div>
+ 
+    </div>
+    
+    
+    <script defer src="js/app.js"></script>
+</body>
+</html>

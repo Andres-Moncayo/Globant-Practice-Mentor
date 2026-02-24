@@ -1,0 +1,49 @@
+
+En la carpeta settings se guardan únicamente las Variables Globales y la Configuración del proyecto. Es el "ADN" de tu diseño. Lo que encontrarás allí es:
+Colores: Base
+Tipografía: Fuentes y tamaños de letra.
+Espaciados: Margenes y paddings.
+Breakpoints: Los anchos de pantalla pc, movil.
+
+
+
+La capa Generic (Genérico) es la primera capa que escribe código CSS real y visible. Su trabajo es "resetear" o "normalizar" el terreno de juego.
+Lo que encontrarás allí es:
+Resets (Reinicios): Eliminar los márgenes y paddings extraños que traen los navegadores por defecto (ese borde blanco feo alrededor de la página).
+Box-Sizing: La regla sagrada (* { box-sizing: border-box; }) para que el padding no aumente el tamaño de tus cajas.
+Estilos Base: Definir la fuente, el color de texto y el alto de línea para todo el body.
+Regla de oro: Aquí se usan selectores de Etiqueta (body, h1, p, a, *).
+
+
+
+La capa Objects (Objetos) es el Esqueleto Invisible de tu sitio web.(cómo se acomodan las cosas), pero sin diseño visual.
+Lo que encontrarás allí es:
+Contenedores: El famoso .o-container que centra el contenido en la pantalla.
+Grillas (Grids): El sistema de columnas y filas (.o-grid, .o-row, .o-col) que organiza los elementos.
+Media Objects: Patrones de "imagen a la izquierda, texto a la derecha" (como un comentario de Facebook o un tweet).
+Regla de oro: Aquí NUNCA usas cosmética.
+SÍ: display, width, margin, padding, flex, grid.
+
+
+
+La capa Components (Componentes) es la Personalidad y la Piel de tu sitio web. Aquí es donde construyes las piezas visuales, reconocibles y reutilizables de la interfaz (UI).
+Lo que encontrarás allí es:
+Piezas de UI: Botones (.c-btn), Tarjetas (.c-card), Barras de navegación (.c-navbar), Inputs (.c-input).
+Estética: Aquí sí defines colores, bordes, sombras, tipografía y fondos.
+Funcionalidad visual: Estados como :hover o clases activas (--active).
+Regla de oro:
+Llevan el prefijo c- (ej: .c-card).
+No deben tener márgenes externos (margin) que los empujen, eso es trabajo del Layout (Objects).
+
+
+
+La capa Trumps (Triunfos o Utilidades) es la Carta del Joker o el As bajo la manga. Es la punta final del triángulo invertido y tiene la máxima autoridad.
+Su trabajo es ganarle a todo lo anterior. Si algo está definido aquí, se aplicará sí o sí, sin importar qué tan específico sea el componente.
+Lo que encontrarás allí es:
+Utilidades (Helpers): Clases pequeñas de un solo propósito que hacen una cosa y la hacen bien.
+Ejemplos: .u-text-center (centrar texto), .u-hidden (ocultar elemento), .u-mt-20 (margen superior de 20px), .u-text-red.
+Overrides (Sobrescrituras): Ajustes manuales para forzar un cambio en un diseño específico.
+Hacks: Parches rápidos para corregir errores en navegadores viejos o situaciones de emergencia.
+Regla de oro:
+Llevan el prefijo u- (de Utility).
+Es el único lugar donde está permitido (y a veces es necesario) usar !important. ¿Por qué? Porque si pones la clase .u-hidden en un elemento, quieres que se oculte siempre, pase lo que pase.
