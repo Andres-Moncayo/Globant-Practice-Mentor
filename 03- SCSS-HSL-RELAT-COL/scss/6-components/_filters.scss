@@ -2,9 +2,7 @@
 
 
 
-.c-filter{
-  --filter-bg: var(--theme-positive);
-  
+.c-filter{ // Botones de Filtros
     background-color: var(--filter-bg);
     padding: 15px;
 
@@ -13,30 +11,31 @@
         border-radius: 1px;
         width: 120px;
         cursor: pointer;
+        border-radius: 5px;
+        background-color:var(--theme-text-muted-light);
+        color:var(--theme-text-main)
     }
 
 
     &__btn--active{
-        border-radius: 1px;
-        width: 120px;
         cursor: pointer;
-        background-color: var(--theme-bg-primary)
+        background-color: var(--theme-text-muted-dark);
+
     }
 };
 
-button {
-  padding: var(--btn-padding);
+button { // Botones de Cartas
   border: none;
   border-radius: var(--btn-radius);
   font-size: var(--btn-font-size);
-  font-weight: var(--btn-font-weight);
+  font-weight: 600;
+  color: var(--theme-text-main); // Color de Letra
   cursor: pointer;
-  transition: var(--btn-transition);
-  box-shadow: var(--btn-shadow);
+  border-radius: 5px;
 }
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: var(--btn-shadow-hover);
+  
 }
 

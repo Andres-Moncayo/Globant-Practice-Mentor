@@ -1,36 +1,44 @@
+// 3-generic/_theming.scss
 @use "../1-settings/colors" as *;
 
-// 1. Definición base (Default / Light)
+// 1. TEMA CLARO (Por defecto) 
 :root {
-  --theme-bg-primary: #{$color-primary};
-  --theme-bg-page: #f5f5f5; // Pagina
-  --theme-bg-elevated: #ffffff; // Cartas
-  --theme-text-main: #111111; // Texto 
-  --theme-background-btn:red;
+
+  // Guardamos la semilla en una variable CSS
+  --brand-base: #{$color-primary};
+
+
+  --theme-bg-page: hsl(from var(--brand-base) h s 98%);
+  --theme-bg-elevated: hsl(from var(--brand-base) h s 100%); // Blanco Puro 
+
+
+  --theme-text-main: hsl(from var(--brand-base) h s 10%); // Color Letra
+  --theme-text-muted-light: hsl(from var(--brand-base) h s 90%); // Color Claro En Base al primario Para: Background-Btn, Hover-Btn
+
+  --theme-text-muted-dark: hsl(from var(--brand-base) h s 60%); // Color Oscuro En Base al primario Para:  Background-Btn Hover-Btn
 }
 
-// 2.  Auto (Dark Mode automático)
-@media (prefers-color-scheme: Dark) {
-  :root {
-    --theme-bg-page: #020617;
-    --theme-bg-elevated: #0f172a;
-    --theme-text-main: #ffffff;
-    --theme-background-btn:red;
+
+
+// 3. FORZAR TEMAS 
+html[data-theme='Blanco'] {
+  --theme-bg-page: hsl(from var(--brand-base) h s 98%);
+  --theme-bg-elevated: hsl(from var(--brand-base) h s 100%);
+
+  --theme-text-main: hsl(from var(--brand-base) h s 10%); // Color Letra Blanco
+  --theme-text-muted-light: hsl(from var(--brand-base) h s 90%); // Color En Base al primario Para: Letra, Background-Btn
+
+  --theme-text-muted-dark: hsl(from var(--brand-base) h s 60%); // Color Oscuro En Base al primario Para:  Background-Btn Hover-Btn
+
   }
-}
 
 
-// Aquí usamos la especificidad de atributos para forzar el tema
-html[data-theme='Light'] {
-  --theme-bg-page: #f5f5f5;
-  --theme-bg-elevated: #fdfdfd;
-  --theme-text-main: #000000;
-  --theme-background-btn:rgb(0, 255, 47);
-}
+html[data-theme='Negro'] {
+  --theme-bg-page: hsl(from var(--brand-base) h s 5%);
+  --theme-bg-elevated: hsl(from var(--brand-base) h s 10%);
 
-html[data-theme='Dark'] {
-  --theme-bg-page: #020617;
-  --theme-bg-elevated: #0f172a;
-  --theme-text-main: #e5e7eb;
-  --theme-background-btn:red;
-}
+  --theme-text-main: hsl(from var(--brand-base) h s 95%); // Color Letra Negro
+  --theme-text-muted-light: hsl(from var(--brand-base) h s 20%); // Color En Base al primario Para: Letra, Background-Btn
+
+  --theme-text-muted-dark: hsl(from var(--brand-base) h s 45%); // Color Oscuro En Base al primario Para:  Background-Btn Hover-Btn
+  }

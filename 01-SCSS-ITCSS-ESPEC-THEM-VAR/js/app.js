@@ -35,11 +35,11 @@ async function getProducts() {
 const root = document.documentElement; // Defino Root como el Html
 const themeToggleBtn = document.getElementById("theme-toggle");
 
-function getCurrentTheme() {
+function getCurrentTheme() { // Obtener el tema actual
   return root.getAttribute('data-theme') || 'Auto';
 }
 
-function setTheme(theme){
+function setTheme(theme){  // Establecer la palabra del tema actual
     root.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
     if (themeToggleBtn){
@@ -48,7 +48,7 @@ function setTheme(theme){
 }
 
 
-function applySavedTheme(){
+function applySavedTheme(){ // Guardar
     const saved = localStorage.getItem('theme');
     if (saved === 'Light' || saved === 'Dark' || saved === 'Auto'){
         setTheme(saved);
@@ -65,7 +65,7 @@ if (themeToggleBtn) {
     else next = 'Auto';
 
     setTheme(next);
-    renderProducts(Allfiltered);
+    
   });
 }
 

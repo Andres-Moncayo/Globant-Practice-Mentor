@@ -20,6 +20,11 @@ async function obtenerProductos() {
 }
 
 
+
+
+
+
+
 // Ejercicio botones cambian de color al dar click y imprimir los de la categoria correspondiente
 function renderProductos(){
     const filtradoBotones = document.querySelectorAll(".c-filter__btn[data-category]");
@@ -48,6 +53,53 @@ function renderProductos(){
 };
 
 
+
+
+
+
+
+
+
+// Ejercicio Configuracion Theming
+
+const root = document.documentElement; 
+const temaPalancaBtn = document.getElementById("theme-toggle");
+
+function obtenerTemaActual(){
+    return root.getAttribute('data-theme') || 'Auto';
+}
+
+function establecerTema(tema){
+    root.setAttribute('data-theme', tema)
+    localStorage.setItem('Tema', tema)
+    if (temaPalancaBtn){
+        temaPalancaBtn.textContent = `Tema: ${tema}`
+
+    }
+}
+
+function aplicarTema(){
+    const guardado = localStorage.getItem('tema');
+    console.log("HOLA +" +guardado)
+    if (guardado === "Blanco" || guardado === "Negro" || guardado == "Auto"){
+        establecerTema(guardado)
+    }
+
+}
+
+if(temaPalancaBtn){
+    temaPalancaBtn.addEventListener('click', ()=>{
+        const actual = obtenerTemaActual();
+        let siguiente;
+        if (actual == 'Auto') siguiente = 'Negro';
+        else if (actual === 'Negro') siguiente = 'Blanco';
+        else siguiente = 'Auto';
+        establecerTema(siguiente);
+    });
+}
+
+
+aplicarTema();
 
 
 
